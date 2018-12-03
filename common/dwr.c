@@ -979,6 +979,11 @@ static void lower_xp_reqs(dw_rom *rom)
         for (i=0; i < 30; i++) {
             rom->xp_reqs[i] = rom->xp_reqs[i] / 2;
         }
+    } else if (VERY_VERY_FAST_XP(rom)) {
+        printf("Changing required experience to 25%% of normal...\n");
+        for (i=0; i < 30; i++) {
+            rom->xp_reqs[i] = rom->xp_reqs[i] * 1 / 4;
+        }
     }
 }
 

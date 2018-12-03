@@ -104,6 +104,7 @@
 #define RANDOMIZE_SHOPS(x)    (x->flags & FLAG_W)
 #define CHAOS_MODE(x)         (x->flags & FLAG_X)
 #define RANDOMIZE_ZONES(x)    (x->flags & FLAG_Z)
+#define VERY_VERY_FAST_XP(x)  (x->flags & FLAG_Y)
 
 #ifdef __cplusplus
 extern "C" {

@@ -42,6 +42,7 @@ LevelComboBox::LevelComboBox(QWidget *parent) : QComboBox(parent)
     this->addItem("Normal");
     this->addItem("Fast");
     this->addItem("Very Fast");
+    this->addItem("Very Very Fast");
 }
 
 char LevelComboBox::getFlag()
@@ -51,6 +52,8 @@ char LevelComboBox::getFlag()
            return 'F';
         case 2:
             return 'V';
+	case 3:
+	    return 'Y';
         default:
             return NO_FLAG;
     }
@@ -61,11 +64,12 @@ bool LevelComboBox::updateState(QString flags)
     if (flags.indexOf(QChar('F')) >= 0) {
         this->setCurrentIndex(1);
         return true;
-    } else {
-        if (flags.indexOf(QChar('V')) >= 0) {
-            this->setCurrentIndex(2);
-            return true;
-        }
+    } else if (flags.indexOf(QChar('V')) >= 0) {
+        this->setCurrentIndex(2);
+        return true;
+    } else if (flags.indexOf(QChar('Y')) >= 0) {
+	this->setCurrentIndex(3);
+	return true;
     }
     this->setCurrentIndex(0);
     return false;
